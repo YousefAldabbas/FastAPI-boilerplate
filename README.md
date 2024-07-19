@@ -267,16 +267,6 @@ DEFAULT_RATE_LIMIT_LIMIT=10         # default=10
 DEFAULT_RATE_LIMIT_PERIOD=3600      # default=3600
 ```
 
-For tests (optional to run):
-
-```
-# ------------- test -------------
-TEST_NAME="Tester User"
-TEST_EMAIL="test@tester.com"
-TEST_USERNAME="testeruser"
-TEST_PASSWORD="Str1ng$t"
-```
-
 And Finally the environment:
 
 ```
@@ -1842,16 +1832,6 @@ And finally, on your browser: `http://localhost/docs`.
 
 ## 7. Testing
 
-For tests, ensure you have in `.env`:
-
-```
-# ------------- test -------------
-TEST_NAME="Tester User"
-TEST_EMAIL="test@tester.com"
-TEST_USERNAME="testeruser"
-TEST_PASSWORD="Str1ng$t"
-```
-
 While in the tests folder, create your test file with the name "test\_{entity}.py", replacing entity with what you're testing
 
 ```sh
@@ -1876,7 +1856,6 @@ First you need to uncomment the following part in the `docker-compose.yml` file:
   #     - ./src/.env
   #   depends_on:
   #     - db
-  #     - create_superuser
   #     - redis
   #   command: python -m pytest ./tests
   #   volumes:
@@ -1895,7 +1874,6 @@ You'll get:
       - ./src/.env
     depends_on:
       - db
-      - create_superuser
       - redis
     command: python -m pytest ./tests
     volumes:
